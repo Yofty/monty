@@ -1,3 +1,4 @@
+#define _POSIX_C_SOURCE 200809L
 #include "monty.h"
 /**
  * textfile_to_array - reads a text file and prints it
@@ -38,7 +39,7 @@ line_t *textfile_to_array(const char *filename)
 		lines = tmp;
 
 		(lines + lineNumber)->content = strdup(lineBuffer);
-		(lines + lineNumber)-number = lineNumber;
+		(lines + lineNumber)->number = lineNumber;
 		lineNumber++;
 		tmp = lines;
 	}

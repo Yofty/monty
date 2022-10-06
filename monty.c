@@ -13,8 +13,8 @@ int main(int argc, char const *argv[])
 {
 	line_t *lines;
 	char **line;
-	int lin_number;
-	stack_t *sstack;
+	int line_number;
+	stack_t *stack;
 	char *content;
 	void (*func)(stack_t**, unsigned int);
 
@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
 	if (argc == 1)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		exite(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 	lines = textfile_to_array(argv[1]);
 	if (lines == NULL)
@@ -42,7 +42,7 @@ int main(int argc, char const *argv[])
 			free(line);
 			free_stack(stack);
 			free_lines(lines);
-			exite(EXIT_FAILURE);
+			exit(EXIT_FAILURE);
 		}
 
 		func(&stack, line_number + 1);

@@ -6,7 +6,7 @@ void monty_error(monty_t *monty)
 		case MONTY_ERROR_INVALID_OPCODE:
 			printf("L%d: unknowninstruction %s\n", monty->line, monty->token);
 			break;
-		case MONTY_ERROR_PUSH_MISSING_ARG:
+		case MONTY_ERROR__PUSH_MISSING_ARG:
 		case MONTY_ERROR_PUSH_INVALID_ARG:
 			printf("L%d: usage push integer\n", monty->line);
 			break;

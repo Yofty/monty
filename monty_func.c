@@ -12,13 +12,13 @@ void op_push(stack_t **stack, unsigned int line_number)
 	 
 	if (stack == NULL)
 	{
-		printf(stderr, "L%d: stack not found\n",line_number);
+		fprintf(stderr, "L%d: stack not found\n",line_number);
 		exit(EXIT_FAILURE);
 	}
 
 	if  (operand == NULL || _atoi(operand, &n) == -1)
 	{
-		printf(stderr, "L%d: usage: push integer\n",line_number);
+		fprintf(stderr, "L%d: usage: push integer\n",line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -26,7 +26,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 
 	if (new == NULL)
 	{
-		printf(stderr, "Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		free(*stack);
 		exit(EXIT_FAILURE);
 	}
@@ -46,7 +46,7 @@ void op_push(stack_t **stack, unsigned int line_number)
  * @line_numbe : the line number
  * Return: void
  */
-void op_pall(stack_t *stack, unsigned int line_number)
+void op_pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 	(void)line_number;
